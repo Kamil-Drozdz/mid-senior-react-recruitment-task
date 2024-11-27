@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      text: {
+        xs: "0.625rem",
+      },
       colors: {
         special: "hsl(var(--special))",
         "special-border": "hsl(var(--special-border))",

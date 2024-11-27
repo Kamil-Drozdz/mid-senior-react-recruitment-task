@@ -58,7 +58,7 @@ export default function NavigationManager() {
   return (
     <div className="space-y-4 p-4">
       <div className="text-center flex flex-col items-center gap-2 p-4 bg-background-light card rounded-lg">
-        <h1 className="text-2xl font-bold">
+        <h1 className="text-2xl font-semibold">
           {items.length === 0 ? "Menu jest puste" : "Menu"}
         </h1>
         <p className="text-muted-foreground">
@@ -78,7 +78,7 @@ export default function NavigationManager() {
             <CirclePlus className="h-6 w-6 text-white" />
             <Button
               aria-label="Dodaj pozycję menu"
-              className="bg-inherit hover:bg-inherit font-bold"
+              className="bg-inherit hover:bg-inherit font-semibold"
               onClick={handleAddItem}
             >
               Dodaj pozycję menu
@@ -132,7 +132,7 @@ export default function NavigationManager() {
                   aria-label="Dodaj pozycję menu"
                   variant="outline"
                   size="sm"
-                  className="font-bold"
+                  className="font-semibold"
                   onClick={handleAddItem}
                 >
                   Dodaj pozycję menu

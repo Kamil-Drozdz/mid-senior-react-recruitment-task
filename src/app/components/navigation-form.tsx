@@ -95,7 +95,7 @@ export function NavigationForm({
             <Button
               aria-label="Anuluj"
               type="button"
-              className="font-bold"
+              className="font-semibold"
               variant="outline"
               onClick={onCancel}
             >
@@ -104,7 +104,7 @@ export function NavigationForm({
             <Button
               aria-label="Dodaj pozycję menu"
               variant="outline"
-              className="text-special border-special-border font-bold"
+              className="text-special border-special-border font-semibold"
               type="submit"
             >
               Dodaj
@@ -116,7 +116,7 @@ export function NavigationForm({
         aria-label="Usuń"
         data-testid="trash-icon"
         onClick={onCancel}
-        className="absolute right-4 top-4 h-5 w-5 text-black cursor-pointer"
+        className="absolute right-4 top-4 md:right-8 md:top-6 h-5 w-5 text-black cursor-pointer"
       />
     </div>
   );

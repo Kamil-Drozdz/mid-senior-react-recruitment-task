@@ -103,16 +103,18 @@ export function NavigationItem({
           disabled={editingItemId === item.id}
         ></Button>
         <div className="flex-1">
-          <div className="font-medium md:w-auto max-w-12 md:max-w-full truncate">
+          <div className="font-semibold text-sm md:w-auto max-w-12 md:max-w-full truncate">
             {item.label}
           </div>
           {item.url && (
-            <div className="text-sm text-muted-foreground">{item.url}</div>
+            <div className="text-sm font-normal text-muted-foreground">
+              {item.url}
+            </div>
           )}
         </div>
         <div className="flex">
           <Button
-            className="rounded-none border-r-0 rounded-l-lg font-bold md:gap-2 gap-1"
+            className="rounded-none border-r-0 rounded-l-lg font-semibold md:gap-2 gap-1"
             aria-label="Edytuj element"
             variant="outline"
             size={isMobile ? "xs" : "sm"}
@@ -121,7 +123,7 @@ export function NavigationItem({
             Edytuj
           </Button>
           <Button
-            className="rounded-none font-bold"
+            className="rounded-none font-semibold"
             variant="outline"
             aria-label="Usuń element"
             size={isMobile ? "xs" : "sm"}
@@ -132,7 +134,7 @@ export function NavigationItem({
           </Button>
           <Button
             aria-label="Dodaj pozycję menu"
-            className="rounded-none border-l-0 rounded-r-lg font-bold"
+            className="rounded-none border-l-0 rounded-r-lg font-semibold"
             variant="outline"
             size={isMobile ? "xs" : "sm"}
             disabled={editingItemId === item.id || level >= 5}
