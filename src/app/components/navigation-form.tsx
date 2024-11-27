@@ -3,6 +3,8 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { Search, Trash2 } from "lucide-react";
+
 import { Button } from "@/ui/button";
 import { Input } from "@/ui/input";
 import {
@@ -14,7 +16,6 @@ import {
   FormMessage,
 } from "@/ui/form";
 import { NavigationFormData } from "@/types/navigation";
-import { Search, Trash2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const formSchema = z.object({

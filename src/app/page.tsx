@@ -1,4 +1,5 @@
+import NavigationManager from "./core/navigation-manager";
 
 export default function Page() {
-  return <div>Hello World</div>;
+  return <NavigationManager />;
 }
