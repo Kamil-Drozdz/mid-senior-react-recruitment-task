@@ -7,27 +7,10 @@ import { CSS } from "@dnd-kit/utilities";
 import { Move } from "lucide-react";
 
 import { Button } from "@/ui/button";
-import {
-  NavigationFormData,
-  NavigationItem as NavigationItemType,
-} from "@/types/navigation";
 import { cn } from "../lib/utils";
 import { NavigationForm } from "./navigation-form";
-
-interface NavigationItemProps {
-  item: NavigationItemType;
-  onEdit: (id: string) => void;
-  onDelete: (id: string) => void;
-  onAddChild: (id: string) => void;
-  level?: number;
-  isAddingItem: boolean;
-  editingItemId: string | null;
-  addingChildToId: string | null;
-  firstItem?: boolean;
-  onSubmit: (data: NavigationFormData) => void;
-  onCancel: () => void;
-  isMobile: boolean;
-}
+import { NavigationItemProps } from "@/types";
+import { Badge } from "@/ui/badge";
 
 export function NavigationItem({
   item,
@@ -104,7 +87,7 @@ export function NavigationItem({
         ></Button>
         <div className="flex-1">
           <div className="font-semibold text-sm md:w-auto max-w-12 md:max-w-full truncate">
-            {item.label}
+            {item.label}   
           </div>
           {item.url && (
             <div className="text-sm font-normal text-muted-foreground">

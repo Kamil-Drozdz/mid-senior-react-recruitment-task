@@ -15,20 +15,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/ui/form";
-import { NavigationFormData } from "@/types/navigation";
+import { NavigationFormData, NavigationFormProps } from "@/types";
 import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
   label: z.string().min(1, "Nazwa jest wymagana"),
   url: z.string().url("Nieprawidłowy adres URL").optional().or(z.literal("")),
 });
-
-interface NavigationFormProps {
-  onSubmit: (data: NavigationFormData) => void;
-  onCancel: () => void;
-  initialData?: NavigationFormData;
-  className?: string;
-}
 
 export function NavigationForm({
   onSubmit,

@@ -13,7 +13,7 @@ import { NavigationItem } from "@/components/navigation-form-item";
 import { useNavigation } from "@/hooks/use-navigation";
 import { useNavigationManagerHelper } from "@/hooks/use-navigation-manager-helper";
 import useIsMobile from "@/hooks/use-is-mobile";
-import { NavigationItem as NavigationItemType } from "@/types/navigation";
+import { NavigationItem as NavigationItemType } from "@/types";
 
 export default function NavigationManager() {
   const [isAddingItem, setIsAddingItem] = useState(false);
