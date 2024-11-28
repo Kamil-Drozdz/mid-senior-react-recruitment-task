@@ -16,13 +16,13 @@ export function useNavigationManagerHelper(
     const { active, over } = event;
 
     if (over && active.id !== over.id) {
-      const findItemAndParent = (items: any[], id: string): [any, any[], number] | null => {
+      const findItemAndParent = (items: NavigationItemType[], id: string): [NavigationItemType, NavigationItemType[], number] | null => {
         for (let i = 0; i < items.length; i++) {
           if (items[i].id === id) {
             return [items[i], items, i];
           }
           if (items[i].children) {
-            const found = findItemAndParent(items[i].children, id);
+            const found = findItemAndParent(items[i].children as NavigationItemType[], id);
             if (found) return found;
           }
         }
@@ -34,7 +34,7 @@ export function useNavigationManagerHelper(
 
       if (sourceResult && targetResult) {
         const [sourceItem, sourceParent, sourceIndex] = sourceResult;
-        const [_, targetParent, targetIndex] = targetResult;
+        const [, targetParent, targetIndex] = targetResult;
 
         const newItems = JSON.parse(JSON.stringify(items));
 
