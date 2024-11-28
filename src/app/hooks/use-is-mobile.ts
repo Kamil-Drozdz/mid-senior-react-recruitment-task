@@ -1,6 +1,6 @@
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from 'react';
 
-import { debounce } from "@/lib/debounce";
+import { debounce } from '@/lib/debounce';
 
 const useIsMobile = (): boolean => {
   const [isMobile, setIsMobile] = useState(false);
@@ -9,9 +9,9 @@ const useIsMobile = (): boolean => {
     const updateSize = (): void => {
       setIsMobile(window.innerWidth < 768);
     };
-    window.addEventListener("resize", debounce(updateSize, 250));
+    window.addEventListener('resize', debounce(updateSize, 250));
 
-    return (): void => window.removeEventListener("resize", updateSize);
+    return (): void => window.removeEventListener('resize', updateSize);
   }, []);
 
   return isMobile;

@@ -1,3 +1,3 @@
-import "@testing-library/jest-dom/vitest";
+import '@testing-library/jest-dom/vitest';
 
-global.React = require("react");
+global.React = require('react');

@@ -1,11 +1,9 @@
-import { vi } from "vitest";
+import { vi } from 'vitest';
 
 let isDraggingState = false;
 
-vi.mock("@dnd-kit/core", () => ({
-  DndContext: ({ children }: { children: React.ReactNode }) => (
-    <div>{children}</div>
-  ),
+vi.mock('@dnd-kit/core', () => ({
+  DndContext: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   useSortable: () => ({
     attributes: {},
     listeners: {},
@@ -17,10 +15,8 @@ vi.mock("@dnd-kit/core", () => ({
   closestCenter: vi.fn(),
 }));
 
-vi.mock("@dnd-kit/sortable", () => ({
-  SortableContext: ({ children }: { children: React.ReactNode }) => (
-    <div>{children}</div>
-  ),
+vi.mock('@dnd-kit/sortable', () => ({
+  SortableContext: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   verticalListSortingStrategy: {},
 }));
 

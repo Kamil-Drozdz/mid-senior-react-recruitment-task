@@ -1,56 +1,34 @@
-"use client";
+'use client';
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { Search, Trash2 } from "lucide-react";
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { Search, Trash2 } from 'lucide-react';
 
-import { Button } from "@/ui/button";
-import { Input } from "@/ui/input";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/ui/form";
-import { NavigationFormData, NavigationFormProps } from "@/types";
-import { cn } from "@/lib/utils";
+import { Button } from '@/ui/button';
+import { Input } from '@/ui/input';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/ui/form';
+import { NavigationFormData, NavigationFormProps } from '@/types';
+import { cn } from '@/lib/utils';
 
 const formSchema = z.object({
-  label: z.string().min(1, "Nazwa jest wymagana"),
-  url: z.string().url("Nieprawidłowy adres URL").optional().or(z.literal("")),
+  label: z.string().min(1, 'Nazwa jest wymagana'),
+  url: z.string().url('Nieprawidłowy adres URL').optional().or(z.literal('')),
 });
 
-export function NavigationForm({
-  onSubmit,
-  onCancel,
-  initialData,
-  className,
-}: NavigationFormProps) {
+export function NavigationForm({ onSubmit, onCancel, initialData, className }: NavigationFormProps) {
   const form = useForm<NavigationFormData>({
     resolver: zodResolver(formSchema),
     defaultValues: initialData || {
-      label: "",
-      url: "",
+      label: '',
+      url: '',
     },
   });
 
   return (
-    <div
-      className={cn(
-        "border-[1px] border-dark-border rounded-lg p-5 relative bg-white",
-        className
-      )}
-    >
+    <div className={cn('border-[1px] border-dark-border rounded-lg p-5 relative bg-white', className)}>
       <Form {...form}>
-        <form
-          data-testid="navigation-form"
-          role="form"
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-4 w-[95%]"
-        >
+        <form data-testid="navigation-form" role="form" onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 w-[95%]">
           <FormField
             control={form.control}
             name="label"
@@ -73,11 +51,7 @@ export function NavigationForm({
                 <FormControl>
                   <div className="relative">
                     <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      className="pl-8"
-                      placeholder="Wklej lub wyszukaj"
-                      {...field}
-                    />
+                    <Input className="pl-8" placeholder="Wklej lub wyszukaj" {...field} />
                   </div>
                 </FormControl>
                 <FormMessage />
@@ -85,13 +59,7 @@ export function NavigationForm({
             )}
           />
           <div className="flex gap-2 ">
-            <Button
-              aria-label="Anuluj"
-              type="button"
-              className="font-semibold"
-              variant="outline"
-              onClick={onCancel}
-            >
+            <Button aria-label="Anuluj" type="button" className="font-semibold" variant="outline" onClick={onCancel}>
               Anuluj
             </Button>
             <Button

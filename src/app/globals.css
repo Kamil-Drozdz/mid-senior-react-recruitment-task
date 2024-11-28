@@ -1,6 +1,6 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -17,7 +17,7 @@ body {
     --special-border: 268, 65%, 84%;
     --background-light: 220, 33%, 98%;
     --background-darker: 0, 0%, 96%;
-    --dark-border: 222, 12%, 79%;
+    --dark-border: 222, 16%, 84%;
 
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;

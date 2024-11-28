@@ -1,14 +1,13 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Toaster } from "sonner";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { Toaster } from 'sonner';
 
-import "./globals.css";
-const inter = Inter({ subsets: ["latin"] });
+import './globals.css';
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Navigation manager",
-  description:
-    "Intuitive drag & drop navigation management system created by Kamil Dróżdż",
+  title: 'Navigation manager',
+  description: 'Intuitive drag & drop navigation management system created by Kamil Dróżdż',
 };
 
 export default function RootLayout({

@@ -1,7 +1,7 @@
-"use client";
-import { useState } from "react";
+'use client';
+import { useState } from 'react';
 
-import { NavigationItem } from "@/types";
+import { NavigationItem } from '@/types';
 
 export function useNavigation() {
   const [items, setItems] = useState<NavigationItem[]>([]);

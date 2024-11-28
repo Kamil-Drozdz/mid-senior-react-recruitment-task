@@ -1,1 +1,1 @@
-export * from "./dnd-kit-mocks";
+export * from './dnd-kit-mocks';

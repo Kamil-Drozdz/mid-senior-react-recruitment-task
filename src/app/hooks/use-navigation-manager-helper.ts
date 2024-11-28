@@ -1,10 +1,6 @@
-import { DragEndEvent } from "@dnd-kit/core";
+import { DragEndEvent } from '@dnd-kit/core';
 
-import {
-  NavigationFormData,
-  NavigationItem,
-  NavigationItem as NavigationItemType,
-} from "@/types";
+import { NavigationFormData, NavigationItem, NavigationItem as NavigationItemType } from '@/types';
 export function useNavigationManagerHelper(
   items: NavigationItemType[],
   editingItemId: string | null,
@@ -20,10 +16,7 @@ export function useNavigationManagerHelper(
     const { active, over } = event;
 
     if (over && active.id !== over.id) {
-      const findItemAndParent = (
-        items: any[],
-        id: string
-      ): [any, any[], number] | null => {
+      const findItemAndParent = (items: any[], id: string): [any, any[], number] | null => {
         for (let i = 0; i < items.length; i++) {
           if (items[i].id === id) {
             return [items[i], items, i];
@@ -45,12 +38,10 @@ export function useNavigationManagerHelper(
 
         const newItems = JSON.parse(JSON.stringify(items));
 
-        const sourceParentInNew =
-          findItemAndParent(newItems, sourceParent[0]?.id)?.[1] || newItems;
+        const sourceParentInNew = findItemAndParent(newItems, sourceParent[0]?.id)?.[1] || newItems;
         sourceParentInNew.splice(sourceIndex, 1);
 
-        const targetParentInNew =
-          findItemAndParent(newItems, targetParent[0]?.id)?.[1] || newItems;
+        const targetParentInNew = findItemAndParent(newItems, targetParent[0]?.id)?.[1] || newItems;
         targetParentInNew.splice(targetIndex, 0, sourceItem);
 
         reorderItems(newItems);
