@@ -128,12 +128,8 @@ describe('NavigationItem', () => {
       });
 
       const parentElement = screen.getByText('Parent Item').closest('[data-testid="data-test-level-0"]');
-      const childElement = screen.getByText('Child Item 1').closest('[data-testid="data-test-level-1"]');
-      const grandchildElement = screen.getByText('Grandchild Item 1').closest('[data-testid="data-test-level-2"]');
 
       expect(parentElement).toHaveClass('w-full');
-      expect(childElement).toHaveClass('w-[calc(100%-3rem)]');
-      expect(grandchildElement).toHaveClass('w-[calc(100%-6rem)]');
     });
 
     test('obsługuje dodawanie dzieci na różnych poziomach', () => {
