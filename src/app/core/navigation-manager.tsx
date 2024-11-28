@@ -69,7 +69,7 @@ export default function NavigationManager() {
         {!isAddingItem && !editingItemId && !addingChildToId && (
           <div className="flex items-center gap-2 bg-special px-2.5 py-1 rounded-lg w-fit brightness-[1.25] hover:brightness-110 transition-colors">
             <CirclePlus className="h-6 w-6 text-white" />
-            <Button aria-label="Dodaj pozycję menu" className="bg-inherit hover:bg-inherit font-semibold" onClick={handleAddItem}>
+            <Button aria-label="Dodaj pozycję menu" className="bg-inherit  hover:bg-inherit font-semibold" onClick={handleAddItem}>
               Dodaj pozycję menu
             </Button>
           </div>
@@ -114,7 +114,13 @@ export default function NavigationManager() {
               ))}
 
               <div className="w-full flex justify-start bg-background-darker p-5 rounded-b-lg">
-                <Button aria-label="Dodaj pozycję menu" variant="outline" size="sm" className="font-semibold" onClick={handleAddItem}>
+                <Button
+                  aria-label="Dodaj pozycję menu"
+                  variant="outline"
+                  size="sm"
+                  className="font-semibold text-text-secondary"
+                  onClick={handleAddItem}
+                >
                   Dodaj pozycję menu
                 </Button>
               </div>

@@ -54,23 +54,21 @@ export function NavigationItem({
         }`}
       >
         <button {...listeners} {...attributes} className="cursor-grab mr-3" aria-label="Przenieś element">
-          <Move className="md:h-5 md:w-5 h-4 w-4 text-muted-foreground" />
+          <Move className="md:h-5 md:w-5 h-4 w-4 text-text-accent" />
         </button>
         <Button variant="ghost" size="sm" className="p-0" aria-label="Rozwiń/zwiń element" disabled={editingItemId === item.id}></Button>
         <div className="flex-1">
-          <div className="font-semibold text-sm md:w-auto max-w-12 md:max-w-full truncate">
+          <div className="font-semibold text-text-primary text-sm md:w-auto max-w-12 md:max-w-full truncate">
             {item.label}
             <Badge variant="outline" className="ml-2 text-special bg-violet-500 bg-opacity-10 border-special-border">
               kolekcja
             </Badge>
           </div>
-          {item.url && (
-            <div className="text-sm font-normal text-muted-foreground md:w-auto max-w-12 md:max-w-full truncate">{item.url}</div>
-          )}
+          {item.url && <div className="text-sm font-normal text-text-accent md:w-auto max-w-12 md:max-w-full truncate">{item.url}</div>}
         </div>
         <div className="flex">
           <Button
-            className="rounded-none border-r-0 rounded-l-lg font-semibold md:gap-2 gap-1"
+            className="rounded-none border-r-0 rounded-l-lg font-semibold md:gap-2 gap-1 text-text-secondary"
             aria-label="Edytuj element"
             variant="outline"
             size={isMobile ? 'xs' : 'sm'}
@@ -79,7 +77,7 @@ export function NavigationItem({
             Edytuj
           </Button>
           <Button
-            className="rounded-none font-semibold"
+            className="rounded-none font-semibold text-text-secondary"
             variant="outline"
             aria-label="Usuń element"
             size={isMobile ? 'xs' : 'sm'}
@@ -90,7 +88,7 @@ export function NavigationItem({
           </Button>
           <Button
             aria-label="Dodaj pozycję menu"
-            className="rounded-none border-l-0 rounded-r-lg font-semibold"
+            className="rounded-none border-l-0 rounded-r-lg font-semibold text-text-secondary"
             variant="outline"
             size={isMobile ? 'xs' : 'sm'}
             disabled={editingItemId === item.id || level >= 5}

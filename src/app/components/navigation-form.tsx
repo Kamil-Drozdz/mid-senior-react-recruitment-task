@@ -36,7 +36,7 @@ export function NavigationForm({ onSubmit, onCancel, initialData, className }: N
               <FormItem>
                 <FormLabel aria-label="Nazwa">Nazwa</FormLabel>
                 <FormControl>
-                  <Input placeholder="np. Promocje" {...field} />
+                  <Input className="text-text-placeholder" placeholder="np. Promocje" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -50,8 +50,8 @@ export function NavigationForm({ onSubmit, onCancel, initialData, className }: N
                 <FormLabel aria-label="Link">Link</FormLabel>
                 <FormControl>
                   <div className="relative">
-                    <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input className="pl-8" placeholder="Wklej lub wyszukaj" {...field} />
+                    <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 text-text-accent" />
+                    <Input className="pl-8 text-text-placeholder" placeholder="Wklej lub wyszukaj" {...field} />
                   </div>
                 </FormControl>
                 <FormMessage />
@@ -59,7 +59,7 @@ export function NavigationForm({ onSubmit, onCancel, initialData, className }: N
             )}
           />
           <div className="flex gap-2 ">
-            <Button aria-label="Anuluj" type="button" className="font-semibold" variant="outline" onClick={onCancel}>
+            <Button aria-label="Anuluj" type="button" className="font-semibold text-text-secondary" variant="outline" onClick={onCancel}>
               Anuluj
             </Button>
             <Button
@@ -77,7 +77,7 @@ export function NavigationForm({ onSubmit, onCancel, initialData, className }: N
         aria-label="Usuń"
         data-testid="trash-icon"
         onClick={onCancel}
-        className="absolute right-4 top-4 md:right-8 md:top-6 h-5 w-5 text-black cursor-pointer"
+        className="absolute right-4 top-4 md:right-8 md:top-6 h-5 w-5 text-text-accent cursor-pointer"
       />
     </div>
   );

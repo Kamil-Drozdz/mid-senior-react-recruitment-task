@@ -9,6 +9,10 @@ export default {
         xs: '0.625rem',
       },
       colors: {
+        'text-primary': '#101828',
+        'text-secondary': '#344054',
+        'text-accent': '#475467',
+        'text-placeholder': '#667085',
         special: 'hsl(var(--special))',
         'special-border': 'hsl(var(--special-border))',
         'background-light': 'hsl(var(--background-light))',
