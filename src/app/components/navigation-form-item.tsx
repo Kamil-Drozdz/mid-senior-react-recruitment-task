@@ -46,7 +46,7 @@ export function NavigationItem({
       data-testid={`data-test-level-${level}`}
       ref={setNodeRef}
       style={style}
-      className={cn(isDragging && 'opacity-50', level > 0 ? '' : 'w-full', `${level === 0 ? 'w-full' : `[calc(100%-${level * 3}rem)]`}`)}
+      className={cn(isDragging && 'opacity-50', level > 0 ? '' : 'w-full')}
     >
       <div
         className={`flex border-dark-border items-center p-2 md:p-5 bg-white border-[1px] ${level >= 2 && 'border-t-1 '} ${
